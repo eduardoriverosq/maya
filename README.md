@@ -1,11 +1,17 @@
 # [Pre-print] Redes Neuronales Discretas Basadas en la Lógica Posicional Vigesimal Maya: Un Enfoque Alternativo para la Detección de Spam
 
-[![DOI](https://zenodo.org)](https://doi.org)
+ 🧠 REDES NEURONALES VIGESIMALES (MVN): Simulación de Perceptrones Mediante Aritmética Biquinaria Maya y Aritmética Posicional Discreta
+
+### 🔬 Registro Digital y Preservación Científica
+* **Identificador DOI Oficial:** `10.5281/zenodo.23049502`
+* **Enlace de Citación Académica:** [https://doi.org](https://doi.org)
+* **Insignia Visual:** [![DOI](https://zenodo.org)](https://doi.org)
+
+---
 
 **Autor:** Eduardo Riveros Quiroz  
 **Campo de Estudio:** Etnocomputación / Computación Cognitiva / Inteligencia Artificial Alternativa  
 **Estado del Proyecto:** Versión de Desarrollo / Prueba de Concepto en Progreso  
-
 ---
 
 ## 📜 Resumen (Abstract)
