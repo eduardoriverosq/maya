@@ -1,6 +1,6 @@
 # [Pre-print] Redes Neuronales Discretas Basadas en la Lógica Posicional Vigesimal Maya: Un Enfoque Alternativo para la Detección de Spam
 
-[![DOI](https://zenodo.org)](https://doi.org)
+[![DOI](10.5281/zenodo.23049502)
 **Autor:** Eduardo Riveros Quiroz  
 **Campo de Estudio:** Etnocomputación / Computación Cognitiva / Inteligencia Artificial Alternativa  
 **Estado del Proyecto:** Versión de Desarrollo / Prueba de Concepto en Progreso  
