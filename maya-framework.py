@@ -29,7 +29,7 @@ html_code = """
         <span style="background: #f97316; color: white; padding: 4px 12px; border-radius: 6px; font-size: 11px; font-weight: 700;">COLAB READY</span>
         <span style="background: #3b82f6; color: white; padding: 4px 12px; border-radius: 6px; font-size: 11px; font-weight: 700;">PYTHON 3.10+</span>
         <span style="background: #059669; color: white; padding: 4px 12px; border-radius: 6px; font-size: 11px; font-weight: 700;">ETHNOMATHEMATICS | EDGE AI</span>
-        <span style="background: #64748b; color: white; padding: 4px 12px; border-radius: 6px; font-size: 11px; font-weight: 700;">LICENCIA MIT</span>
+        <span style="background: #64748b; color: white; padding: 4px 12px; border-radius: 6px; font-size: 11px; font-weight: 700;">GNU General Public License v3.0</span>
       </div>
     </div>
 
