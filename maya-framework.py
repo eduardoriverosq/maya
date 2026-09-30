@@ -79,7 +79,6 @@ display(HTML(html_code))
 # GENERACIÓN DE GRÁFICOS ANALÓGICOS (MATPLOTLIB)
 # ======================================================================
 
-# Gráfico 1: Tabla Comparativa
 fig, ax = plt.subplots(figsize=(13, 6.8), dpi=300)
 ax.axis("off")
 plt.suptitle("ANÁLISIS COMPARATIVO: REDES NEURONALES", fontsize=16, fontweight="bold", y=0.96, color="#1E293B")
@@ -191,3 +190,81 @@ class MayaNeuron:
         
         self.last_z = accum + self.bias
         
+        # Activación Maya-ReLU: max(0, z)
+        if self.last_z.val > 0:
+Usa el código con precaución.
+self.last_a = self.last_z
+else:
+self.last_a = MayaScalar(0)  # Cero maya (caracol)
+return self.last_a
+class MayaDenseLayer:
+"""Capa densa de neuronas mayas."""
+def init(self, in_features: int, out_features: int):
+self.neurons = [MayaNeuron(in_features) for _ in range(out_features)]
+def forward(self, inputs: List[MayaScalar]) -> List[MayaScalar]:
+return [neuron.forward(inputs) for neuron in self.neurons]
+======================================================================
+3. RED COMPLETA Y DEMOSTRACIÓN EN ACCIÓN (FILTRO ANTISPAM MAYA)
+======================================================================
+class MayaNeuralNetwork:
+"""Red Neuronal Vigesimal Completa."""
+def init(self):
+self.h_layer = MayaDenseLayer(in_features=2, out_features=2)
+self.out_neuron = MayaNeuron(in_features=2)
+def predict(self, x: List[int]) -> MayaScalar:
+maya_in = [MayaScalar(val) for val in x]
+hidden_out = self.h_layer.forward(maya_in)
+final_out = self.out_neuron.forward(hidden_out)
+return final_out
+def train_step(self, dataset: List[Tuple[List[int], int]], lr_scale: float = 0.05):
+total_error = 0
+for x_raw, y_target in dataset:
+pred = self.predict(x_raw)
+error = y_target - pred.val
+total_error += abs(error)
+if error == 0:
+continue
+delta = 1 if error > 0 else -1
+# Ajuste de pesos capa salida
+for i, h_act in enumerate(self.out_neuron.last_inputs):
+if h_act.val > 0:
+dw = int(round(delta * lr_scale * h_act.val))
+self.out_neuron.weights[i] = self.out_neuron.weights[i] + MayaScalar(dw)
+self.out_neuron.bias = self.out_neuron.bias + MayaScalar(delta)
+# Ajuste de pesos capa oculta
+for i, h_neuron in enumerate(self.h_layer.neurons):
+if h_neuron.last_z.val > 0:
+for j, in_val in enumerate(h_neuron.last_inputs):
+dw_h = int(round(delta * lr_scale * in_val.val))
+h_neuron.weights[j] = h_neuron.weights[j] + MayaScalar(dw_h)
+h_neuron.bias = h_neuron.bias + MayaScalar(delta)
+return total_error
+Ejecución de prueba pedagógica en la consola
+if name == "main":
+print("\n=== INICIALIZANDO FILTRO ANTISPAM: RED NEURONAL VIGESIMAL MAYA ===")
+red_antispam_maya = MayaNeuralNetwork()
+# Dataset de prueba: [Enlaces sospechosos, Palabras urgentes] -> (1: SPAM, 0: LEGÍTIMO)
+dataset_correos_maya = [
+([15, 12], 1),  # Alto riesgo -> SPAM
+([1, 2], 0),    # Bajo riesgo -> LEGÍTIMO
+([18, 19], 1),  # Alto riesgo -> SPAM
+([0, 1], 0)     # Bajo riesgo -> LEGÍTIMO
+]
+print("\n--- Entrenamiento del Filtro Maya (5 Épocas) ---")
+for epoca in range(1, 6):
+error = red_antispam_maya.train_step(dataset_correos_maya, lr_scale=0.1)
+print(f"Época {epoca} -> Error de clasificación en el sistema maya: {error}")
+print("\n--- Inferencia Antispam (Verificación de Glifos y Activación) ---")
+# Evaluamos un correo altamente sospechoso
+correo_sospechoso = [16, 14]
+decision_vigesimal = red_antispam_maya.predict(correo_sospechoso)
+print(f"Entrada del correo evaluado [Enlaces, Palabras Clave]: {correo_sospechoso}")
+print("Resultado de la activación matemática maya en la neurona de salida:")
+print(decision_vigesimal.glyph())
+if decision_vigesimal.val > 0:
+print("\n[RESULTADO]: FILTRO MAYA CLASIFICA ESTE CORREO COMO SPAM 🚫")
+else:
+print("\n[RESULTADO]: FILTRO MAYA CLASIFICA ESTE CORREO COMO LEGÍTIMO (HAM) ✅")
+
+***
+
